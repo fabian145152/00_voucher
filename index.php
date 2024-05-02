@@ -10,7 +10,9 @@
 </head>
 
 <body>
-
+<?php
+header("Location:voucher/inicio_voucher.php");
+?>
     <div class="container mt-5">
         <div class="row">
             <div class="col-md-4">

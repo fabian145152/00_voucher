@@ -40,7 +40,7 @@ $datos = $con->query($sql);
         <img src="../imagenes/logo_pampa.png" alt="logo_pampa">
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         <img src="../imagenes/logo_porte.jpg" width="8%" alt="logo_porte">
-        <p>ENTREGA DE VOUCHER<?php echo $datos->num_rows; ?></p>
+        <p><?php echo $datos->num_rows . " "; ?>VOUCHER PROCESADOS</p>
         <br>
 
         <table border="1">

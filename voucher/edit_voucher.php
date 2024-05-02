@@ -7,7 +7,7 @@
     <title>Document</title>
     <link href="https://fonts.googleapis.com/css?family=Lato|Raleway&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../../css/bootstrap.min.css">
-    <link rel="stylesheet" href="../../css/form.css">
+    <link rel="stylesheet" href="../css/form.css">
 
 </head>
 
@@ -24,19 +24,17 @@
     $sql = "SELECT * FROM voucher_temporales WHERE id = '$id' ";
     $result = $con->query($sql);
 
-
     $row = $result->fetch_assoc();
     $reloj = $row['reloj'];
     $peaje = $row['peaje'];
     ?>
-
 
     <div class="container-sm">
         <div class="row">
 
             <div class="col-md-12">
 
-                <form class="form-group" accept=-"charset utf8" action="valida_voucher.php?=q" method="post">
+                <form class="form-group" accept=-"charset utf8" action="valida_voucher.php?=q" method="post" target="__blank">
                     <div class="from-group">
                         <h4 class="text-center">ACTUALIZAR VIAJE No: <?php echo $row['viaje_no'] ?> MOVIL: <?php echo $row['movil'] ?> </h4>
                         <input type="hidden" name="id" value="<?php echo $row['id']; ?>">
@@ -76,7 +74,7 @@
                             <input type="text" class="form-control" id="plus" name="plus" value="<?php echo $plus = $row['plus']; ?>">
                         </div>
                         <div class="text-center">
-                            <input type="submit" class="btn btn-primary" value="Validar">
+                            <input type="submit" class="btn btn-primary" value="Cerrar onclick=" window.close()">
                         </div>
                     </div>
                 </form>

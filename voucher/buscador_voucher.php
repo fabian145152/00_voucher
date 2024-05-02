@@ -31,6 +31,14 @@
             window.location = "delete_voucher.php?q=" + cod_voucher;
 
         }
+
+        function abrirPagina() {
+            var ancho = 800;
+            var alto = 600;
+            var left = (screen.width - ancho) / 2;
+            var top = (screen.height - alto) / 2;
+            window.open("edit_voucher.ph?=n", "MiVentana", "width=" + ancho + ",height=" + alto + ",left=" + left + ",top=" + top);
+        }
     </script>
 </head>
 
@@ -64,13 +72,9 @@
     $registros = $regis->num_rows;
     ?>
     <h2 class="titule">VOUCHER DE LA UNIDAD <?php echo $movil; ?> </h2>
-    <a href="inicio_voucher.php">Volver</a>
-    <?php
+    <a href="inicio_voucher.php" class="btn btn-primary btn-sm">Volver</a>
+    <br>
 
-
-
-
-    ?>
 
     <table class="table table table-bordered table-sm table-hover" action="save_voucher.php?=<?php echo $d['id'] ?>" method="post">
 
@@ -103,7 +107,7 @@
 
         ?>
             <tr>
-                <td><?php echo $d['id']; ?></td>
+                <td><?php echo $variable = $d['id']; ?></td>
                 <td><?php echo $d['viaje_no']; ?></td>
                 <td><?php echo $fecha = $d['completado']; ?></td>
                 <td><?php echo $d['nom_pasaj']; ?></td>
@@ -118,6 +122,7 @@
                 <td><a class="btn btn-primary btn-sm" href="#" onclick="detalleProduct(<?php echo $d['id']; ?>)">Detalles</td>
                 <td><a class="btn btn-warning btn-sm" href="#" onclick="validarProduct(<?php echo $d['id']; ?>)">Validar</td>
                 <td><a class="btn btn-danger btn-sm" href="#" onclick="deleteProduct(<?php echo $d['id'] ?>)">Borrar</a></td>
+
 
 
                 <?php
