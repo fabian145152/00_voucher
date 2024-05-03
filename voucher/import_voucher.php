@@ -38,17 +38,6 @@ if (isset($_FILES["name"])) {
 
                 $x_completado = $sheet->getCell("Q" . $row)->getValue();
 
-                $completado = $x_completado;
-
-
-                //$Fecha =  "2018-03-27 08:15:00";
-                $fecha = date("Y-d-m", strtotime($completado)) . "<br>";
-                // salida 27th March, 2018
-                
-                //echo $fecha;
-
-                //exit();
-
 
                 $x_destino = $sheet->getCell("R" . $row)->getValue();
                 $x_reloj = $sheet->getCell("S" . $row)->getValue();
@@ -111,7 +100,8 @@ if (isset($_FILES["name"])) {
                         \"$x_traslado\",
                         \"$x_siniestro\",
                         \"$x_solicitado\",
-                        \"$fecha\",
+                        \"$x_completado\",
+                      
                         \"$x_destino\",
                         \"$x_reloj\",
                         \"$x_peaje\",
